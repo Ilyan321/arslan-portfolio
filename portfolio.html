@@ -4,192 +4,481 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Arsalan Khan — Environmental Science &amp; Remote Sensing</title>
+<meta name="description" content="Academic Portfolio of Arsalan Khan — Environmental Science undergraduate at USPCAS-W MUET specializing in Satellite Remote Sensing, GIS, and Groundwater Hydrology.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --parchment:#F5F1E6;
-    --parchment-2:#ECE5D3;
-    --ink:#1C2B27;
-    --ink-soft:#3C4B46;
-    --teal:#2F6459;
-    --teal-deep:#1D433B;
-    --clay:#B8743A;
-    --line:#CBBF9F;
+  :root {
+    --parchment: #F7F4EB;
+    --parchment-2: #EFE8D8;
+    --parchment-card: #FAF8F2;
+    --ink: #182622;
+    --ink-soft: #384A44;
+    --ink-muted: #62756E;
+    --teal: #245249;
+    --teal-deep: #16362F;
+    --teal-light: #D5E5E0;
+    --clay: #B66D38;
+    --clay-soft: #F6ECE2;
+    --line: #D8CEB7;
+    --line-subtle: #E6DECB;
+    --shadow-sm: 0 1px 3px rgba(22, 54, 47, 0.06);
+    --shadow-md: 0 4px 12px rgba(22, 54, 47, 0.08);
   }
-  *{box-sizing:border-box; margin:0; padding:0;}
-  html{scroll-behavior:smooth;}
-  body{
-    background:var(--parchment);
-    color:var(--ink);
-    font-family:'IBM Plex Sans', sans-serif;
-    line-height:1.6;
-  }
-  h1,h2,h3{font-family:'Source Serif 4', serif; font-weight:600; color:var(--teal-deep);}
-  .mono{font-family:'IBM Plex Mono', monospace;}
-  a{color:var(--teal); text-decoration:none;}
-  a:hover{text-decoration:underline;}
 
-  .wrap{max-width:760px; margin:0 auto; padding:0 28px;}
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--parchment);
+    color: var(--ink);
+    font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
 
-  /* ---- Hero ---- */
-  .hero{
-    position:relative;
-    background:var(--teal-deep);
-    color:var(--parchment);
-    padding:88px 0 72px;
-    overflow:hidden;
+  h1, h2, h3, h4 {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-weight: 600;
+    color: var(--teal-deep);
+    letter-spacing: -0.01em;
   }
-  .hero svg.contours{
-    position:absolute; inset:0; width:100%; height:100%;
-    opacity:0.16;
+
+  .mono { font-family: 'IBM Plex Mono', monospace; }
+  a { color: var(--teal); text-decoration: none; transition: color 0.15s ease; }
+  a:hover { color: var(--clay); text-decoration: underline; }
+
+  .wrap {
+    max-width: 840px;
+    margin: 0 auto;
+    padding: 0 32px;
   }
-  .hero-inner{position:relative; z-index:1;}
-  .eyebrow-loc{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:13px;
-    color:#B9D8CF;
-    letter-spacing:0.02em;
-    margin-bottom:18px;
+
+  /* ---- Header / Hero ---- */
+  .hero {
+    position: relative;
+    background: var(--teal-deep);
+    color: var(--parchment);
+    padding: 96px 0 76px;
+    overflow: hidden;
   }
-  .hero h1{
-    color:#FBF8F0;
-    font-size:clamp(36px, 6vw, 54px);
-    line-height:1.08;
-    max-width:11ch;
+  .hero svg.contours {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.18;
+    pointer-events: none;
   }
-  .hero p.tagline{
-    margin-top:18px;
-    max-width:46ch;
-    font-size:17px;
-    color:#D8E7E2;
+  .hero-inner { position: relative; z-index: 1; }
+  .eyebrow-loc {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    color: #BDDCD3;
+    letter-spacing: 0.03em;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
   }
-  .hero .links{margin-top:30px; font-size:14px; color:#B9D8CF;}
-  .hero .links a{color:#EFE3CC;}
-  .hero .links span.sep{margin:0 10px; color:#4C7269;}
+  .eyebrow-loc::before {
+    content: "";
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    background: var(--clay);
+    border-radius: 50%;
+  }
+  .hero h1 {
+    color: #FAF8F2;
+    font-size: clamp(38px, 6vw, 56px);
+    line-height: 1.08;
+    font-weight: 700;
+    margin-bottom: 16px;
+  }
+  .hero p.tagline {
+    max-width: 52ch;
+    font-size: 17.5px;
+    line-height: 1.55;
+    color: #DDEBE6;
+  }
+  .hero .links {
+    margin-top: 32px;
+    font-size: 14.5px;
+    color: #BDDCD3;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+  }
+  .hero .links a {
+    color: #FAF2E3;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    border-bottom: 1px solid rgba(250, 242, 227, 0.4);
+    padding-bottom: 1px;
+  }
+  .hero .links a:hover {
+    color: #FFFFFF;
+    border-bottom-color: #FFFFFF;
+    text-decoration: none;
+  }
+  .hero .links span.sep { color: #527A71; }
 
   /* ---- Section shell ---- */
-  section{padding:64px 0;}
-  section.alt{background:var(--parchment-2);}
-  .section-head{
-    display:flex;
-    align-items:baseline;
-    gap:14px;
-    margin-bottom:34px;
-    border-bottom:1px solid var(--line);
-    padding-bottom:14px;
+  section { padding: 72px 0; }
+  section.alt {
+    background: var(--parchment-2);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
   }
-  .section-head .num{font-family:'IBM Plex Mono',monospace; font-size:13px; color:var(--clay);}
-  .section-head h2{font-size:26px;}
+  .section-head {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    margin-bottom: 36px;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 14px;
+  }
+  .section-head .num {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    color: var(--clay);
+    font-weight: 600;
+  }
+  .section-head h2 {
+    font-size: 27px;
+    color: var(--teal-deep);
+  }
 
-  p{color:var(--ink-soft); max-width:64ch;}
+  p { color: var(--ink-soft); }
 
   /* ---- About ---- */
-  .about p{font-size:16.5px;}
+  .about p {
+    font-size: 17px;
+    line-height: 1.7;
+    max-width: 68ch;
+  }
 
-  /* ---- Featured research ---- */
-  .feature-card{
-    border:1px solid var(--line);
-    background:var(--parchment);
-    padding:30px 28px;
-    position:relative;
+  /* ---- Featured Research (FYP) ---- */
+  .feature-card {
+    border: 1px solid var(--line);
+    background: var(--parchment-card);
+    padding: 34px 32px;
+    position: relative;
+    border-radius: 2px;
+    box-shadow: var(--shadow-sm);
   }
-  .feature-card::before{
-    content:"";
-    position:absolute; left:0; top:0; bottom:0; width:4px;
-    background:var(--clay);
+  .feature-card::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: var(--clay);
   }
-  .feature-card h3{font-size:20px; margin-bottom:6px;}
-  .feature-card .meta{font-family:'IBM Plex Mono',monospace; font-size:12.5px; color:var(--teal); margin-bottom:14px;}
-  .feature-card ul{margin:14px 0 0 20px; color:var(--ink-soft);}
-  .feature-card li{margin-bottom:6px;}
+  .feature-card h3 {
+    font-size: 21px;
+    line-height: 1.35;
+    margin-bottom: 8px;
+  }
+  .feature-card .meta {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    color: var(--teal);
+    margin-bottom: 18px;
+    font-weight: 500;
+  }
+  .feature-card p {
+    font-size: 15.5px;
+    line-height: 1.6;
+    margin-bottom: 16px;
+  }
+  .feature-card ul {
+    margin: 0 0 0 20px;
+    color: var(--ink-soft);
+    font-size: 15px;
+  }
+  .feature-card li {
+    margin-bottom: 8px;
+    line-height: 1.55;
+  }
 
-  /* ---- Project entries ---- */
-  .project{
-    display:grid;
-    grid-template-columns:140px 1fr;
-    gap:22px;
-    padding:26px 0;
-    border-bottom:1px solid var(--line);
+  /* ---- Projects ---- */
+  .project {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 28px;
+    padding: 40px 0;
+    border-bottom: 1px solid var(--line);
   }
-  .project:last-child{border-bottom:none;}
-  .project .year{
-    font-family:'IBM Plex Mono',monospace;
-    font-size:13px;
-    color:var(--clay);
-    padding-top:4px;
+  .project:first-child { padding-top: 0; }
+  .project:last-child { border-bottom: none; padding-bottom: 0; }
+  .project .year {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13.5px;
+    font-weight: 600;
+    color: var(--clay);
+    padding-top: 4px;
   }
-  .project h3{font-size:18px; margin-bottom:8px;}
-  .project p{font-size:15px;}
-  .stat-row{display:flex; flex-wrap:wrap; gap:10px; margin-top:14px;}
-  .stat{
-    font-family:'IBM Plex Mono',monospace;
-    font-size:12px;
-    background:var(--parchment-2);
-    border:1px solid var(--line);
-    padding:5px 10px;
-    color:var(--teal-deep);
+  .project h3 {
+    font-size: 20px;
+    line-height: 1.35;
+    margin-bottom: 10px;
   }
-  .visual-slot{
-    margin-top:14px;
-    border:1px dashed var(--line);
-    background:rgba(255,255,255,0.4);
-    padding:14px 16px;
-    font-family:'IBM Plex Mono',monospace;
-    font-size:12px;
-    color:#8A8168;
+  .project p {
+    font-size: 15.5px;
+    line-height: 1.6;
   }
-  @media (max-width:560px){
-    .project{grid-template-columns:1fr;}
+  .stat-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 14px;
+    margin-bottom: 20px;
+  }
+  .stat {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    background: var(--parchment-2);
+    border: 1px solid var(--line);
+    padding: 4px 10px;
+    color: var(--teal-deep);
+    border-radius: 2px;
+    font-weight: 500;
+  }
+
+  /* ---- Project Gallery Grid ---- */
+  .project-gallery {
+    display: grid;
+    gap: 14px;
+    margin-top: 16px;
+  }
+  .project-gallery.grid-1 {
+    grid-template-columns: 1fr;
+  }
+  .project-gallery.grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .project-gallery.grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .figure-card {
+    background: var(--parchment-card);
+    border: 1px solid var(--line);
+    border-radius: 2px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+  }
+  .figure-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--teal);
+  }
+  .figure-img-wrap {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    background: #E8E2D2;
+    overflow: hidden;
+  }
+  .figure-img-wrap.poster-ratio {
+    aspect-ratio: 16 / 11;
+  }
+  .figure-img-wrap.tall-ratio {
+    aspect-ratio: 4 / 5;
+  }
+  .figure-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+    transition: transform 0.3s ease;
+  }
+  .figure-card:hover .figure-img-wrap img {
+    transform: scale(1.02);
+  }
+  .zoom-hint {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    background: rgba(22, 54, 47, 0.85);
+    color: #FAF8F2;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    padding: 3px 8px;
+    border-radius: 2px;
+    backdrop-filter: blur(4px);
+    opacity: 0.9;
+    transition: opacity 0.15s ease;
+  }
+  .figure-caption {
+    padding: 10px 14px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11.5px;
+    color: var(--ink-soft);
+    line-height: 1.45;
+    background: var(--parchment-card);
+    border-top: 1px solid var(--line-subtle);
+  }
+  .figure-caption .fig-num {
+    color: var(--clay);
+    font-weight: 600;
+    margin-right: 4px;
+  }
+
+  @media (max-width: 680px) {
+    .project { grid-template-columns: 1fr; gap: 12px; }
+    .project-gallery.grid-2,
+    .project-gallery.grid-4 { grid-template-columns: 1fr; }
+    .wrap { padding: 0 20px; }
+    section { padding: 54px 0; }
+    .hero { padding: 72px 0 54px; }
   }
 
   /* ---- Skills ---- */
-  .skills-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:26px 40px;
+  .skills-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px 44px;
   }
-  @media (max-width:560px){ .skills-grid{grid-template-columns:1fr;} }
-  .skill-group h4{
-    font-family:'IBM Plex Mono',monospace;
-    font-size:12px;
-    letter-spacing:0.03em;
-    color:var(--clay);
-    margin-bottom:10px;
-    text-transform:uppercase;
+  @media (max-width: 560px) { .skills-grid { grid-template-columns: 1fr; } }
+  .skill-group h4 {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12.5px;
+    letter-spacing: 0.04em;
+    color: var(--clay);
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    font-weight: 600;
   }
-  .skill-group ul{list-style:none;}
-  .skill-group li{
-    font-size:14.5px;
-    color:var(--ink-soft);
-    padding:6px 0;
-    border-bottom:1px solid var(--line);
+  .skill-group ul { list-style: none; }
+  .skill-group li {
+    font-size: 14.5px;
+    color: var(--ink-soft);
+    padding: 7px 0;
+    border-bottom: 1px solid var(--line);
+    display: flex;
+    align-items: center;
   }
-  .skill-group li:last-child{border-bottom:none;}
+  .skill-group li::before {
+    content: "▪";
+    color: var(--teal);
+    font-size: 10px;
+    margin-right: 8px;
+  }
+  .skill-group li:last-child { border-bottom: none; }
 
-  /* ---- Education / conferences ---- */
-  .row{
-    display:flex; justify-content:space-between; gap:20px;
-    padding:14px 0; border-bottom:1px solid var(--line);
-    font-size:15px;
+  /* ---- Education / Involvement ---- */
+  .row {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--line);
+    font-size: 15px;
   }
-  .row:last-child{border-bottom:none;}
-  .row .l{color:var(--ink); font-weight:500;}
-  .row .r{color:var(--ink-soft); font-family:'IBM Plex Mono',monospace; font-size:13px; white-space:nowrap;}
+  .row:last-child { border-bottom: none; }
+  .row .l { color: var(--ink); font-weight: 500; max-width: 58ch; }
+  .row .r {
+    color: var(--ink-soft);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    white-space: nowrap;
+  }
+  @media (max-width: 600px) {
+    .row { flex-direction: column; gap: 4px; }
+  }
 
   /* ---- Footer ---- */
-  footer{
-    background:var(--teal-deep);
-    color:var(--parchment);
-    padding:56px 0 40px;
-    text-align:left;
+  footer {
+    background: var(--teal-deep);
+    color: var(--parchment);
+    padding: 64px 0 48px;
+    text-align: left;
   }
-  footer h2{color:#FBF8F0; font-size:24px; margin-bottom:14px;}
-  footer p{color:#D8E7E2; max-width:52ch;}
-  footer .contact{margin-top:22px; font-family:'IBM Plex Mono',monospace; font-size:14px;}
-  footer .contact a{color:#EFE3CC;}
-  footer .contact div{margin-bottom:8px;}
-  footer .note{margin-top:34px; font-size:12.5px; color:#6E9188;}
+  footer h2 { color: #FAF8F2; font-size: 26px; margin-bottom: 14px; }
+  footer p { color: #DDEBE6; max-width: 54ch; font-size: 15.5px; }
+  footer .contact { margin-top: 24px; font-family: 'IBM Plex Mono', monospace; font-size: 14px; }
+  footer .contact a { color: #FAF2E3; }
+  footer .contact a:hover { color: #FFFFFF; }
+  footer .contact div { margin-bottom: 8px; }
+  footer .note {
+    margin-top: 36px;
+    font-size: 12.5px;
+    color: #7DA49B;
+    font-family: 'IBM Plex Mono', monospace;
+  }
+
+  /* ---- Accessible Fullscreen Lightbox Modal ---- */
+  .lightbox-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: rgba(14, 28, 25, 0.94);
+    backdrop-filter: blur(8px);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+  }
+  .lightbox-modal.active {
+    display: flex;
+    opacity: 1;
+  }
+  .lightbox-content {
+    position: relative;
+    max-width: 94vw;
+    max-height: 92vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .lightbox-img {
+    max-width: 100%;
+    max-height: 80vh;
+    object-fit: contain;
+    border-radius: 2px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
+    background: #000;
+  }
+  .lightbox-caption {
+    margin-top: 14px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    color: #FAF8F2;
+    text-align: center;
+    max-width: 80ch;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 6px 14px;
+    border-radius: 2px;
+  }
+  .lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 24px;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #FFFFFF;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 14px;
+    padding: 8px 14px;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: background 0.15s ease;
+  }
+  .lightbox-close:hover {
+    background: rgba(255, 255, 255, 0.3);
+  }
 </style>
 </head>
 <body>
@@ -208,7 +497,7 @@
     <div class="links">
       <a href="mailto:arsalankhanshabrani46@gmail.com">arsalankhanshabrani46@gmail.com</a>
       <span class="sep">/</span>
-      <a href="https://linkedin.com/in/arsalan-khan-shabrani" target="_blank">LinkedIn</a>
+      <a href="https://linkedin.com/in/arsalan-khan-shabrani" target="_blank" rel="noopener noreferrer">LinkedIn</a>
     </div>
   </div>
 </header>
@@ -231,7 +520,6 @@
         <li>Processing multi-temporal raster datasets in Python and QGIS / Google Earth Engine</li>
         <li>Isolating long-term storage trends and deriving regional depletion rates</li>
       </ul>
-      <div class="visual-slot">→ add a GWSA trend chart or study-area map here once available</div>
     </div>
   </div>
 </section>
@@ -240,6 +528,7 @@
   <div class="wrap">
     <div class="section-head"><span class="num">03</span><h2>Projects</h2></div>
 
+    <!-- Project 1: Karachi AQI -->
     <div class="project">
       <div class="year">2026</div>
       <div>
@@ -250,10 +539,44 @@
           <span class="stat">UV AI: 1.44–2.49</span>
           <span class="stat">Hotspot: Korangi &amp; Malir</span>
         </div>
-        <div class="visual-slot">→ add the QGIS hotspot map screenshot here</div>
+
+        <div class="project-gallery grid-4">
+          <div class="figure-card" onclick="openLightbox('assets/optimized/karachi_no2_map.webp', 'Fig 1.1: Tropospheric NO₂ Spatial Distribution Map across Karachi Sub-districts (Sentinel-5P / QGIS)')">
+            <div class="figure-img-wrap tall-ratio">
+              <img src="assets/optimized/karachi_no2_map.webp" alt="Karachi NO2 Map" loading="lazy" decoding="async">
+              <span class="zoom-hint">🔍 Expand</span>
+            </div>
+            <div class="figure-caption"><span class="fig-num">Fig 1.1</span> Tropospheric NO₂ Spatial Map</div>
+          </div>
+
+          <div class="figure-card" onclick="openLightbox('assets/optimized/karachi_aerosol_map.webp', 'Fig 1.2: UV Aerosol Index (UV AI) Distribution and Atmospheric Hotspots (Sentinel-5P / QGIS)')">
+            <div class="figure-img-wrap tall-ratio">
+              <img src="assets/optimized/karachi_aerosol_map.webp" alt="Karachi Aerosol Index Map" loading="lazy" decoding="async">
+              <span class="zoom-hint">🔍 Expand</span>
+            </div>
+            <div class="figure-caption"><span class="fig-num">Fig 1.2</span> UV Aerosol Index Map</div>
+          </div>
+
+          <div class="figure-card" onclick="openLightbox('assets/optimized/karachi_no2_chart.webp', 'Fig 1.3: Sub-district Tropospheric NO₂ Concentration Analysis Chart')">
+            <div class="figure-img-wrap">
+              <img src="assets/optimized/karachi_no2_chart.webp" alt="NO2 Sub-district Chart" loading="lazy" decoding="async">
+              <span class="zoom-hint">🔍 Expand</span>
+            </div>
+            <div class="figure-caption"><span class="fig-num">Fig 1.3</span> NO₂ Concentration Chart</div>
+          </div>
+
+          <div class="figure-card" onclick="openLightbox('assets/optimized/karachi_aerosol_chart.webp', 'Fig 1.4: UV Aerosol Index Sub-district Comparison Chart')">
+            <div class="figure-img-wrap">
+              <img src="assets/optimized/karachi_aerosol_chart.webp" alt="Aerosols Sub-district Chart" loading="lazy" decoding="async">
+              <span class="zoom-hint">🔍 Expand</span>
+            </div>
+            <div class="figure-caption"><span class="fig-num">Fig 1.4</span> UV Aerosol Index Chart</div>
+          </div>
+        </div>
       </div>
     </div>
 
+    <!-- Project 2: Kamber UHI -->
     <div class="project">
       <div class="year">2026</div>
       <div>
@@ -263,10 +586,44 @@
           <span class="stat">LST range: 33–66°C</span>
           <span class="stat">NDVI: −0.15 to 0.44</span>
         </div>
-        <div class="visual-slot">→ add the LST / NDVI map here</div>
+
+        <div class="project-gallery grid-2">
+          <div class="figure-card" onclick="openLightbox('assets/optimized/kamber_uhi_layout.webp', 'Fig 2.1: Land Surface Temperature (LST) & NDVI Spatial Layout of Kamber Shahdadkot')">
+            <div class="figure-img-wrap poster-ratio">
+              <img src="assets/optimized/kamber_uhi_layout.webp" alt="Kamber UHI Layout" loading="lazy" decoding="async">
+              <span class="zoom-hint">🔍 Expand</span>
+            </div>
+            <div class="figure-caption"><span class="fig-num">Fig 2.1</span> LST &amp; NDVI Spatial Layout</div>
+          </div>
+
+          <div class="figure-card" onclick="openLightbox('assets/optimized/kamber_detail_2.webp', 'Fig 2.2: Thermal Anomaly & Surface Temperature Mapping Details')">
+            <div class="figure-img-wrap poster-ratio">
+              <img src="assets/optimized/kamber_detail_2.webp" alt="Kamber Thermal Detail" loading="lazy" decoding="async">
+              <span class="zoom-hint">🔍 Expand</span>
+            </div>
+            <div class="figure-caption"><span class="fig-num">Fig 2.2</span> Thermal Anomaly Breakdown</div>
+          </div>
+
+          <div class="figure-card" onclick="openLightbox('assets/optimized/kamber_detail_3.webp', 'Fig 2.3: Normalized Difference Vegetation Index (NDVI) Spatial Distribution')">
+            <div class="figure-img-wrap poster-ratio">
+              <img src="assets/optimized/kamber_detail_3.webp" alt="Kamber NDVI Detail" loading="lazy" decoding="async">
+              <span class="zoom-hint">🔍 Expand</span>
+            </div>
+            <div class="figure-caption"><span class="fig-num">Fig 2.3</span> NDVI Vegetation Correlation</div>
+          </div>
+
+          <div class="figure-card" onclick="openLightbox('assets/optimized/kamber_detail_1.webp', 'Fig 2.4: Multi-temporal Temperature Profile & Analysis Curves')">
+            <div class="figure-img-wrap poster-ratio">
+              <img src="assets/optimized/kamber_detail_1.webp" alt="Kamber Profile Detail" loading="lazy" decoding="async">
+              <span class="zoom-hint">🔍 Expand</span>
+            </div>
+            <div class="figure-caption"><span class="fig-num">Fig 2.4</span> Temporal Temperature Profile</div>
+          </div>
+        </div>
       </div>
     </div>
 
+    <!-- Project 3: Hyderabad Waste Network -->
     <div class="project">
       <div class="year">2026</div>
       <div>
@@ -277,10 +634,20 @@
           <span class="stat">Mean route: 12.78 km</span>
           <span class="stat">Network: 383.44 km</span>
         </div>
-        <div class="visual-slot">→ add the route network map here</div>
+
+        <div class="project-gallery grid-1">
+          <div class="figure-card" onclick="openLightbox('assets/optimized/hyderabad_waste_network.webp', 'Fig 3.1: Hyderabad City 30-Route Waste Collection Network Analysis & Landfill Routing (QGIS)')">
+            <div class="figure-img-wrap poster-ratio">
+              <img src="assets/optimized/hyderabad_waste_network.webp" alt="Hyderabad Waste Route Map" loading="lazy" decoding="async">
+              <span class="zoom-hint">🔍 Expand</span>
+            </div>
+            <div class="figure-caption"><span class="fig-num">Fig 3.1</span> 30-Route Network Optimization Map (383.44 km Network Coverage)</div>
+          </div>
+        </div>
       </div>
     </div>
 
+    <!-- Project 4: Coastal Inundation Modeling -->
     <div class="project">
       <div class="year">2026</div>
       <div>
@@ -291,9 +658,43 @@
           <span class="stat">2025: 59.6 km²</span>
           <span class="stat">2015 monsoon peak: 312.05 km²</span>
         </div>
-        <div class="visual-slot">→ add the shoreline-change map here</div>
+
+        <div class="project-gallery grid-2">
+          <div class="figure-card" onclick="openLightbox('assets/optimized/coastal_inundation_poster.webp', 'Fig 4.1: Final Coastal Inundation & Shoreline Dynamics Analysis Poster (Thatta District)')">
+            <div class="figure-img-wrap poster-ratio">
+              <img src="assets/optimized/coastal_inundation_poster.webp" alt="Coastal Inundation Poster" loading="lazy" decoding="async">
+              <span class="zoom-hint">🔍 Expand</span>
+            </div>
+            <div class="figure-caption"><span class="fig-num">Fig 4.1</span> Shoreline Dynamics &amp; Inundation Poster</div>
+          </div>
+
+          <div class="figure-card" onclick="openLightbox('assets/optimized/coastal_inundation_total_change.webp', 'Fig 4.2: Total Shoreline Change & MNDWI Water Index Temporal Layout (2010–2025)')">
+            <div class="figure-img-wrap poster-ratio">
+              <img src="assets/optimized/coastal_inundation_total_change.webp" alt="Total Change Layout" loading="lazy" decoding="async">
+              <span class="zoom-hint">🔍 Expand</span>
+            </div>
+            <div class="figure-caption"><span class="fig-num">Fig 4.2</span> Multi-temporal MNDWI Change Layout</div>
+          </div>
+
+          <div class="figure-card" onclick="openLightbox('assets/optimized/coastal_inundation_location.webp', 'Fig 4.3: Study Area Geographical Framework & Regional Location Map')">
+            <div class="figure-img-wrap poster-ratio">
+              <img src="assets/optimized/coastal_inundation_location.webp" alt="Location Map" loading="lazy" decoding="async">
+              <span class="zoom-hint">🔍 Expand</span>
+            </div>
+            <div class="figure-caption"><span class="fig-num">Fig 4.3</span> Study Area Geographic Location Map</div>
+          </div>
+
+          <div class="figure-card" onclick="openLightbox('assets/optimized/coastal_inundation_context.webp', 'Fig 4.4: Field Context & Deltaic Shoreline Regional Perspective')">
+            <div class="figure-img-wrap poster-ratio">
+              <img src="assets/optimized/coastal_inundation_context.webp" alt="Coastal Field Context" loading="lazy" decoding="async">
+              <span class="zoom-hint">🔍 Expand</span>
+            </div>
+            <div class="figure-caption"><span class="fig-num">Fig 4.4</span> Field Context &amp; Regional Perspective</div>
+          </div>
+        </div>
       </div>
     </div>
+
   </div>
 </section>
 
@@ -355,11 +756,46 @@
     <p>Open to discussing research collaborations, GIS work, or Master's opportunities in water resources and environmental remote sensing.</p>
     <div class="contact">
       <div><a href="mailto:arsalankhanshabrani46@gmail.com">arsalankhanshabrani46@gmail.com</a></div>
-      <div><a href="https://linkedin.com/in/arsalan-khan-shabrani" target="_blank">linkedin.com/in/arsalan-khan-shabrani</a></div>
+      <div><a href="https://linkedin.com/in/arsalan-khan-shabrani" target="_blank" rel="noopener noreferrer">linkedin.com/in/arsalan-khan-shabrani</a></div>
     </div>
     <div class="note">Jamshoro, Sindh, Pakistan</div>
   </div>
 </footer>
+
+<!-- Lightbox Modal for High-Resolution Inspection -->
+<div id="lightbox" class="lightbox-modal" onclick="closeLightbox(event)">
+  <button class="lightbox-close" onclick="closeLightbox(event)" aria-label="Close Preview">✕ Close</button>
+  <div class="lightbox-content" onclick="event.stopPropagation()">
+    <img id="lightbox-img" class="lightbox-img" src="" alt="Enlarged GIS Map View">
+    <div id="lightbox-caption" class="lightbox-caption"></div>
+  </div>
+</div>
+
+<script>
+  function openLightbox(src, caption) {
+    const modal = document.getElementById('lightbox');
+    const img = document.getElementById('lightbox-img');
+    const cap = document.getElementById('lightbox-caption');
+    img.src = src;
+    img.alt = caption || 'Enlarged GIS Map';
+    cap.textContent = caption || '';
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox(e) {
+    if (e) e.stopPropagation();
+    const modal = document.getElementById('lightbox');
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      closeLightbox();
+    }
+  });
+</script>
 
 </body>
 </html>

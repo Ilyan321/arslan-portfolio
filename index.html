@@ -416,21 +416,47 @@
   footer {
     background: var(--navy-hero);
     color: #F8FAFC;
-    padding: 48px 0 36px;
+    padding: 48px 0 42px;
     text-align: left;
     border-top: 1px solid #1E293B;
   }
-  footer h2 { color: #FFFFFF; font-size: 24px; margin-bottom: 10px; }
-  footer p { color: #CBD5E1; max-width: 64ch; font-size: 15px; }
-  footer .contact { margin-top: 20px; font-family: 'IBM Plex Mono', monospace; font-size: 13.5px; }
-  footer .contact a { color: #F1F5F9; }
-  footer .contact a:hover { color: #5EEAD4; }
-  footer .contact div { margin-bottom: 6px; }
-  footer .note {
-    margin-top: 28px;
-    font-size: 12.5px;
-    color: #94A3B8;
+  footer h2 { color: #FFFFFF; font-size: 24px; margin-bottom: 8px; }
+  footer p { color: #CBD5E1; max-width: 68ch; font-size: 15px; margin-bottom: 22px; }
+  footer .contact-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
     font-family: 'IBM Plex Mono', monospace;
+    font-size: 13.5px;
+  }
+  footer .contact-item {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+  }
+  footer .contact-label {
+    color: #5EEAD4;
+    font-weight: 600;
+    min-width: 80px;
+  }
+  footer .contact-item a {
+    color: #F1F5F9;
+    border-bottom: 1px solid rgba(241, 245, 249, 0.35);
+    padding-bottom: 1px;
+  }
+  footer .contact-item a:hover {
+    color: #5EEAD4;
+    border-bottom-color: #5EEAD4;
+    text-decoration: none;
+  }
+  footer .contact-item span.contact-val {
+    color: #CBD5E1;
+  }
+  @media (max-width: 560px) {
+    footer .contact-item {
+      flex-direction: column;
+      gap: 2px;
+    }
   }
 
   /* ---- Accessible Fullscreen Lightbox Modal ---- */
@@ -773,11 +799,20 @@
   <div class="wrap">
     <h2>Get in touch</h2>
     <p>Open to discussing research collaborations, GIS work, or Master's opportunities in water resources and environmental remote sensing.</p>
-    <div class="contact">
-      <div><a href="mailto:arsalankhanshabrani46@gmail.com">arsalankhanshabrani46@gmail.com</a></div>
-      <div><a href="https://linkedin.com/in/arsalan-khan-shabrani" target="_blank" rel="noopener noreferrer">linkedin.com/in/arsalan-khan-shabrani</a></div>
+    <div class="contact-grid">
+      <div class="contact-item">
+        <span class="contact-label">Email:</span>
+        <a href="mailto:arsalankhanshabrani46@gmail.com">arsalankhanshabrani46@gmail.com</a>
+      </div>
+      <div class="contact-item">
+        <span class="contact-label">LinkedIn:</span>
+        <a href="https://linkedin.com/in/arsalan-khan-shabrani" target="_blank" rel="noopener noreferrer">linkedin.com/in/arsalan-khan-shabrani</a>
+      </div>
+      <div class="contact-item">
+        <span class="contact-label">Address:</span>
+        <span class="contact-val">Jamshoro, Sindh, Pakistan</span>
+      </div>
     </div>
-    <div class="note">Jamshoro, Sindh, Pakistan</div>
   </div>
 </footer>
 

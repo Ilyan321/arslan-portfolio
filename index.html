@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arsalan Khan — Environmental Science &amp; Remote Sensing</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --parchment:#F5F1E6;
+    --parchment-2:#ECE5D3;
+    --ink:#1C2B27;
+    --ink-soft:#3C4B46;
+    --teal:#2F6459;
+    --teal-deep:#1D433B;
+    --clay:#B8743A;
+    --line:#CBBF9F;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--parchment);
+    color:var(--ink);
+    font-family:'IBM Plex Sans', sans-serif;
+    line-height:1.6;
+  }
+  h1,h2,h3{font-family:'Source Serif 4', serif; font-weight:600; color:var(--teal-deep);}
+  .mono{font-family:'IBM Plex Mono', monospace;}
+  a{color:var(--teal); text-decoration:none;}
+  a:hover{text-decoration:underline;}
+
+  .wrap{max-width:760px; margin:0 auto; padding:0 28px;}
+
+  /* ---- Hero ---- */
+  .hero{
+    position:relative;
+    background:var(--teal-deep);
+    color:var(--parchment);
+    padding:88px 0 72px;
+    overflow:hidden;
+  }
+  .hero svg.contours{
+    position:absolute; inset:0; width:100%; height:100%;
+    opacity:0.16;
+  }
+  .hero-inner{position:relative; z-index:1;}
+  .eyebrow-loc{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13px;
+    color:#B9D8CF;
+    letter-spacing:0.02em;
+    margin-bottom:18px;
+  }
+  .hero h1{
+    color:#FBF8F0;
+    font-size:clamp(36px, 6vw, 54px);
+    line-height:1.08;
+    max-width:11ch;
+  }
+  .hero p.tagline{
+    margin-top:18px;
+    max-width:46ch;
+    font-size:17px;
+    color:#D8E7E2;
+  }
+  .hero .links{margin-top:30px; font-size:14px; color:#B9D8CF;}
+  .hero .links a{color:#EFE3CC;}
+  .hero .links span.sep{margin:0 10px; color:#4C7269;}
+
+  /* ---- Section shell ---- */
+  section{padding:64px 0;}
+  section.alt{background:var(--parchment-2);}
+  .section-head{
+    display:flex;
+    align-items:baseline;
+    gap:14px;
+    margin-bottom:34px;
+    border-bottom:1px solid var(--line);
+    padding-bottom:14px;
+  }
+  .section-head .num{font-family:'IBM Plex Mono',monospace; font-size:13px; color:var(--clay);}
+  .section-head h2{font-size:26px;}
+
+  p{color:var(--ink-soft); max-width:64ch;}
+
+  /* ---- About ---- */
+  .about p{font-size:16.5px;}
+
+  /* ---- Featured research ---- */
+  .feature-card{
+    border:1px solid var(--line);
+    background:var(--parchment);
+    padding:30px 28px;
+    position:relative;
+  }
+  .feature-card::before{
+    content:"";
+    position:absolute; left:0; top:0; bottom:0; width:4px;
+    background:var(--clay);
+  }
+  .feature-card h3{font-size:20px; margin-bottom:6px;}
+  .feature-card .meta{font-family:'IBM Plex Mono',monospace; font-size:12.5px; color:var(--teal); margin-bottom:14px;}
+  .feature-card ul{margin:14px 0 0 20px; color:var(--ink-soft);}
+  .feature-card li{margin-bottom:6px;}
+
+  /* ---- Project entries ---- */
+  .project{
+    display:grid;
+    grid-template-columns:140px 1fr;
+    gap:22px;
+    padding:26px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .project:last-child{border-bottom:none;}
+  .project .year{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:13px;
+    color:var(--clay);
+    padding-top:4px;
+  }
+  .project h3{font-size:18px; margin-bottom:8px;}
+  .project p{font-size:15px;}
+  .stat-row{display:flex; flex-wrap:wrap; gap:10px; margin-top:14px;}
+  .stat{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:12px;
+    background:var(--parchment-2);
+    border:1px solid var(--line);
+    padding:5px 10px;
+    color:var(--teal-deep);
+  }
+  .visual-slot{
+    margin-top:14px;
+    border:1px dashed var(--line);
+    background:rgba(255,255,255,0.4);
+    padding:14px 16px;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:12px;
+    color:#8A8168;
+  }
+  @media (max-width:560px){
+    .project{grid-template-columns:1fr;}
+  }
+
+  /* ---- Skills ---- */
+  .skills-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:26px 40px;
+  }
+  @media (max-width:560px){ .skills-grid{grid-template-columns:1fr;} }
+  .skill-group h4{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:12px;
+    letter-spacing:0.03em;
+    color:var(--clay);
+    margin-bottom:10px;
+    text-transform:uppercase;
+  }
+  .skill-group ul{list-style:none;}
+  .skill-group li{
+    font-size:14.5px;
+    color:var(--ink-soft);
+    padding:6px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .skill-group li:last-child{border-bottom:none;}
+
+  /* ---- Education / conferences ---- */
+  .row{
+    display:flex; justify-content:space-between; gap:20px;
+    padding:14px 0; border-bottom:1px solid var(--line);
+    font-size:15px;
+  }
+  .row:last-child{border-bottom:none;}
+  .row .l{color:var(--ink); font-weight:500;}
+  .row .r{color:var(--ink-soft); font-family:'IBM Plex Mono',monospace; font-size:13px; white-space:nowrap;}
+
+  /* ---- Footer ---- */
+  footer{
+    background:var(--teal-deep);
+    color:var(--parchment);
+    padding:56px 0 40px;
+    text-align:left;
+  }
+  footer h2{color:#FBF8F0; font-size:24px; margin-bottom:14px;}
+  footer p{color:#D8E7E2; max-width:52ch;}
+  footer .contact{margin-top:22px; font-family:'IBM Plex Mono',monospace; font-size:14px;}
+  footer .contact a{color:#EFE3CC;}
+  footer .contact div{margin-bottom:8px;}
+  footer .note{margin-top:34px; font-size:12.5px; color:#6E9188;}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <svg class="contours" viewBox="0 0 760 320" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M-20,260 C120,220 200,300 340,250 C480,200 560,280 780,230" stroke="#F5F1E6" stroke-width="1" fill="none"/>
+    <path d="M-20,220 C130,180 210,260 350,210 C490,160 570,240 780,190" stroke="#F5F1E6" stroke-width="1" fill="none"/>
+    <path d="M-20,180 C140,140 220,220 360,170 C500,120 580,200 780,150" stroke="#F5F1E6" stroke-width="1" fill="none"/>
+    <path d="M-20,140 C150,100 230,180 370,130 C510,80 590,160 780,110" stroke="#F5F1E6" stroke-width="1" fill="none"/>
+  </svg>
+  <div class="wrap hero-inner">
+    <div class="eyebrow-loc">Jamshoro, Sindh, Pakistan · 25°25′N 68°16′E</div>
+    <h1>Arsalan Khan</h1>
+    <p class="tagline">Environmental Science undergraduate working on groundwater sustainability and water security through satellite remote sensing and GIS. Prospective Master's student, Fall 2027.</p>
+    <div class="links">
+      <a href="mailto:arsalankhanshabrani46@gmail.com">arsalankhanshabrani46@gmail.com</a>
+      <span class="sep">/</span>
+      <a href="https://linkedin.com/in/arsalan-khan-shabrani" target="_blank">LinkedIn</a>
+    </div>
+  </div>
+</header>
+
+<section class="about">
+  <div class="wrap">
+    <div class="section-head"><span class="num">01</span><h2>About</h2></div>
+    <p>I'm a final-year Environmental Science student at USPCAS-W, Mehran University of Engineering and Technology, Jamshoro, with hands-on lab experience in water and wastewater quality control and technical grounding in GIS, remote sensing, and environmental data analysis. My work centers on how satellite gravimetry and hydrological modeling can be used to track groundwater depletion and water security under climate change — using GRACE/GRACE-FO, Sentinel imagery, GIS, and Google Earth Engine.</p>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <div class="section-head"><span class="num">02</span><h2>Current Research</h2></div>
+    <div class="feature-card">
+      <h3>Groundwater Depletion Assessment Using Satellite Gravimetry &amp; Hydrological Modeling</h3>
+      <div class="meta">Final Year Thesis · 2026–2027 · Supervised by Dr. Ghulam Hussain Dars, USPCAS-W</div>
+      <p>Quantifying regional groundwater storage anomalies by integrating GRACE/GRACE-FO satellite gravimetry with GLDAS land surface model outputs.</p>
+      <ul>
+        <li>Processing multi-temporal raster datasets in Python and QGIS / Google Earth Engine</li>
+        <li>Isolating long-term storage trends and deriving regional depletion rates</li>
+      </ul>
+      <div class="visual-slot">→ add a GWSA trend chart or study-area map here once available</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head"><span class="num">03</span><h2>Projects</h2></div>
+
+    <div class="project">
+      <div class="year">2026</div>
+      <div>
+        <h3>Atmospheric Air Quality &amp; Hotspot Mapping over Karachi</h3>
+        <p>Processed Sentinel-5P satellite data in QGIS to map spatial patterns of tropospheric NO₂ and UV Aerosol Index across Karachi's sub-districts.</p>
+        <div class="stat-row">
+          <span class="stat">NO₂: 10.6–55.4 µmol/m²</span>
+          <span class="stat">UV AI: 1.44–2.49</span>
+          <span class="stat">Hotspot: Korangi &amp; Malir</span>
+        </div>
+        <div class="visual-slot">→ add the QGIS hotspot map screenshot here</div>
+      </div>
+    </div>
+
+    <div class="project">
+      <div class="year">2026</div>
+      <div>
+        <h3>Urban Heat Island Effect, Kamber Shahdadkot District</h3>
+        <p>Derived Land Surface Temperature from multi-temporal satellite imagery and cross-referenced with NDVI to link thermal hotspots to vegetation loss.</p>
+        <div class="stat-row">
+          <span class="stat">LST range: 33–66°C</span>
+          <span class="stat">NDVI: −0.15 to 0.44</span>
+        </div>
+        <div class="visual-slot">→ add the LST / NDVI map here</div>
+      </div>
+    </div>
+
+    <div class="project">
+      <div class="year">2026</div>
+      <div>
+        <h3>Waste Logistics Network Optimization, Hyderabad City</h3>
+        <p>Designed a 30-route optimized waste collection network using QGIS Network Analysis, routing collection points to a centralized landfill site.</p>
+        <div class="stat-row">
+          <span class="stat">30 routes</span>
+          <span class="stat">Mean route: 12.78 km</span>
+          <span class="stat">Network: 383.44 km</span>
+        </div>
+        <div class="visual-slot">→ add the route network map here</div>
+      </div>
+    </div>
+
+    <div class="project">
+      <div class="year">2026</div>
+      <div>
+        <h3>Coastal Inundation Modeling, Deltaic Region of Thatta District</h3>
+        <p>Applied the Modified Normalized Difference Water Index to Landsat 7/8/9 imagery (2010–2025) to map shoreline change in Keti Bandar and Kharo Chan.</p>
+        <div class="stat-row">
+          <span class="stat">2010: 79.29 km²</span>
+          <span class="stat">2025: 59.6 km²</span>
+          <span class="stat">2015 monsoon peak: 312.05 km²</span>
+        </div>
+        <div class="visual-slot">→ add the shoreline-change map here</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <div class="section-head"><span class="num">04</span><h2>Skills</h2></div>
+    <div class="skills-grid">
+      <div class="skill-group">
+        <h4>Geospatial &amp; Remote Sensing</h4>
+        <ul>
+          <li>Google Earth Engine (GEE)</li>
+          <li>QGIS</li>
+          <li>Remote Sensing &amp; DEM / Raster Processing</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <h4>Modeling &amp; Programming</h4>
+        <ul>
+          <li>HEC-RAS</li>
+          <li>EPANET</li>
+          <li>Python — geospatial &amp; statistical analysis</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <h4>Domain Competencies</h4>
+        <ul>
+          <li>Water &amp; Wastewater Treatment</li>
+          <li>Water Sampling &amp; Testing</li>
+          <li>Solid Waste Management</li>
+          <li>Air Pollution Analysis</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <h4>Languages</h4>
+        <ul>
+          <li>English — Proficient</li>
+          <li>Urdu — Proficient</li>
+          <li>Sindhi — Native</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head"><span class="num">05</span><h2>Education &amp; Involvement</h2></div>
+    <div class="row"><span class="l">B.S. Environmental Science, USPCAS-W, MUET Jamshoro</span><span class="r">2023–2027 · CGPA 3.41/4.00</span></div>
+    <div class="row"><span class="l">Research Intern, Advanced Water &amp; Wastewater Quality Control Lab</span><span class="r">Jun–Aug 2024</span></div>
+    <div class="row"><span class="l">Intl. Conference on Water Governance &amp; Climate Resilience — Volunteer</span><span class="r">Jun 2025</span></div>
+    <div class="row"><span class="l">1.5°C Global Environmental Conference — Participant</span><span class="r">Jun 2025</span></div>
+    <div class="row"><span class="l">TEDxMUET Conference — Attendee</span><span class="r">Oct 2023</span></div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <h2>Get in touch</h2>
+    <p>Open to discussing research collaborations, GIS work, or Master's opportunities in water resources and environmental remote sensing.</p>
+    <div class="contact">
+      <div><a href="mailto:arsalankhanshabrani46@gmail.com">arsalankhanshabrani46@gmail.com</a></div>
+      <div><a href="https://linkedin.com/in/arsalan-khan-shabrani" target="_blank">linkedin.com/in/arsalan-khan-shabrani</a></div>
+    </div>
+    <div class="note">Jamshoro, Sindh, Pakistan</div>
+  </div>
+</footer>
+
+</body>
+</html>
